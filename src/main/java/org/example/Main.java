@@ -9,7 +9,8 @@ public class Main {
      * Method signature: circleArea(int)
      * Returns the area of a circle. */
     public static double circleArea(int radius) {
-        return 0;
+        double area =  Math.round(Math.PI * radius * radius * 100);
+        return area / 100;
     }
 
     /** Method 2
@@ -19,7 +20,8 @@ public class Main {
      * Method signature: circleCircum(int)
      * Returns the circumference of a circle. */
     public static double circleCircum(int radius) {
-        return 0;
+        double circum = Math.round(Math.PI * 2 * radius * 100);
+        return circum / 100;
     }
 
     /** Method 3
@@ -33,7 +35,11 @@ public class Main {
      * Circumference: 18.85
      * Area: 28.27 */
     public static String circleInfo(int radius) {
-        return null;
+        double circum = Math.round(Math.PI * 2 * radius * 100);
+        double c = circum / 100;
+        double area =  Math.round(Math.PI * radius * radius * 100);
+        double a = area / 100;
+        return "Radius: " + radius + "\nCircumference: " + c + "\nArea: " + a;
     }
 
     /** Method 4
@@ -44,8 +50,9 @@ public class Main {
      * Returns a String detailing the number of hours and minutes.
      * Format of returned String: e.g. 3 hours and 46 minutes */
     public static String minutesToHoursMinutes(int minutes) {
-
-        return null;
+        int hour = minutes /60;
+        int min = minutes %60;
+        return hour + " hours and " + min + " minutes";
     }
 
     /** Method 5
@@ -57,8 +64,11 @@ public class Main {
      * Format of returned String: e.g. 3:56 pm
      * */
     public static String twentyFourToTwelve(String time) {
-
-        return null;
+        String h = time.substring(0,2);
+        int converted = Integer.parseInt(h);
+        String min = time.substring(2);
+        int hours = converted - 12;
+        return hours + min+" pm";
 
     }
 
@@ -70,7 +80,10 @@ public class Main {
      * Returns the distance between two points */
     public static double distanceBetweenTwoPoints(int x1, int y1, int x2, int y2) {
 
-        return 0;
+        double distance = Math.pow(x1-x2,2) + Math.pow(y1-y2,2);
+        double sqrt = Math.round(Math.sqrt(distance) * 100);
+        double d = sqrt/100;
+        return d;
 
     }
 
@@ -81,8 +94,9 @@ public class Main {
      * Method signature: fahrenheitToCelsius(int)
      * Returns the degrees celsius equivalent of the degrees in fahrenheit */
     public static double fahrenheitToCelsius(int fahrenheit) {
-
-        return 0;
+        double c = fahrenheit-32;
+        double cc = Math.round(c * 5/9*100);
+        return cc/100;
 
     }
 
@@ -93,8 +107,7 @@ public class Main {
      * Method signature: celsiusToFahrenheit(int)
      * Returns the degrees fahrenheit equivalent of the degrees in celsius */
     public static double celsiusToFahrenheit(int celsius) {
-
-        return 0;
+        return (double) Math.round((((double) celsius * 9/5) + 32) * 10) / 10;
 
     }
 
